@@ -35,6 +35,9 @@ set listchars=tab:^\ ,trail:~
 " ヤンクでクリップボードにコピー
 set clipboard=unnamed,autoselect
 
+" ideaのネイティブなペーストアクションを有効にする
+set clipboard+=ideaput
+
 " 対応する括弧を強調表示
 set showmatch
 
@@ -52,5 +55,3 @@ set shiftwidth=2
 
 " タブキー押下時に挿入される文字幅を指定
 set softtabstop=2
-
-set clipboard+=ideaput
