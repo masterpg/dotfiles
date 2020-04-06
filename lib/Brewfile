@@ -1,0 +1,40 @@
+tap "homebrew/cask"
+tap "homebrew/cask-fonts"
+cask_args appdir: "/Applications"
+
+brew "anyenv"
+brew "coreutils"
+brew "curl"
+brew "git"
+brew "mas"
+#brew "neovim"
+brew "nkf"
+brew "openssl"
+brew "tree"
+brew "wget"
+brew "yarn"
+
+cask "alfred"
+cask "appcleaner"
+cask "bettertouchtool"
+cask "charles"
+cask "docker"
+cask "firefox"
+cask "font-myrica"
+cask "google-chrome"
+cask "google-japanese-ime"
+cask "iterm2"
+cask "jetbrains-toolbox"
+cask "keka"
+cask "keyboardcleantool"
+cask "skype"
+cask "sourcetree"
+cask "teamviewer"
+cask "unity-hub"
+cask "visual-studio-code"
+cask "vlc"
+
+mas "Bear", id: 1091189122
+mas "Skitch", id: 425955336
+mas "TextWrangler", id: 404010395
+mas "Yoink", id: 457622435

@@ -1,0 +1,17 @@
+#!/bin/bash
+
+run_yarn() {
+  if has "yarn"; then
+    echo "Install yarn packages..."
+
+    yarn global add \
+     @nestjs/cli \
+     @quasar/cli \
+     @vue/cli \
+     firebase-tools \
+     gulp
+
+    echo "$(tput setaf 2)Install npm packages complete. ✔︎$(tput sgr0)"
+  fi
+}
+

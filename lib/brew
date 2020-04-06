@@ -1,0 +1,112 @@
+#!/bin/bash
+DOT_DIRECTORY="${HOME}/dotfiles"
+
+run_brew() {
+  if has "brew"; then
+    echo "$(tput setaf 2)Already installed Homebrew ✔︎$(tput sgr0)"
+  else
+    echo "Installing Homebrew..."
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  fi
+
+  if has "brew"; then
+    echo "Updating Homebrew..."
+    brew update && brew upgrade
+    [[ $? ]] && echo "$(tput setaf 2)Update Homebrew complete. ✔︎$(tput sgr0)"
+
+    ### bundle ###
+    brew bundle --file ${DOT_DIRECTORY}/lib/Brewfile
+
+
+#    ### brew ###
+#    local list_formulae
+#    local -a missing_formulae
+#    local -a desired_formulae=(
+#      'anyenv'
+#      'coreutils'
+#      'curl'
+#      'git'
+#      'mas'
+#      #'neovim'
+#      'nkf'
+#      'openssl'
+#      'tree'
+#      'wget'
+#      'yarn'
+#    )
+#
+#    local installed=`brew list`
+#
+#    for index in ${!desired_formulae[*]}
+#    do
+#      local formula=`echo ${desired_formulae[$index]} | cut -d' ' -f 1`
+#      if [[ -z `echo "${installed}" | grep "^${formula}$"` ]]; then
+#        missing_formulae=("${missing_formulae[@]}" "${desired_formulae[$index]}")
+#      else
+#        echo "Installed ${formula}"
+#      fi
+#    done
+#
+#    if [[ "$missing_formulae" ]]; then
+#      list_formulae=$( printf "%s " "${missing_formulae[@]}" )
+#
+#      echo "Installing missing Homebrew formulae..."
+#      brew install $list_formulae
+#
+#      [[ $? ]] && echo "$(tput setaf 2)Installed missing formulae ✔︎$(tput sgr0)"
+#    fi
+#
+#
+#    ### cask ###
+#    brew tap homebrew/cask-fonts
+#
+#    local -a missing_formulae=()
+#    local -a desired_formulae=(
+#      'alfred'
+#      'appcleaner'
+#      'bettertouchtool'
+#      'charles'
+#      'docker'
+#      'firefox'
+#      'font-myrica'
+#      'google-chrome'
+#      'google-japanese-ime'
+#      'iterm2'
+#      'jetbrains-toolbox'
+#      'keka'
+#      'keyboardcleantool'
+#      'skype'
+#      'sourcetree'
+#      'teamviewer'
+#      'unity-hub'
+#      'visual-studio-code'
+#      'vlc'
+#    )
+#
+#    local installed=`brew cask list`
+#
+#    for index in ${!desired_formulae[*]}
+#    do
+#      local formula=`echo ${desired_formulae[$index]} | cut -d' ' -f 1`
+#      if [[ -z `echo "${installed}" | grep "^${formula}$"` ]]; then
+#        missing_formulae=("${missing_formulae[@]}" "${desired_formulae[$index]}")
+#      else
+#        echo "Installed ${formula}"
+#      fi
+#    done
+#
+#    if [[ "$missing_formulae" ]]; then
+#      list_formulae=$( printf "%s " "${missing_formulae[@]}" )
+#
+#      echo "Installing missing Homebrew formulae..."
+#      brew cask install $list_formulae
+#
+#      [[ $? ]] && echo "$(tput setaf 2)Installed missing formulae ✔︎$(tput sgr0)"
+#    fi
+
+
+    echo "Cleanup Homebrew..."
+    brew cleanup
+    echo "$(tput setaf 2)Cleanup Homebrew complete. ✔︎$(tput sgr0)"
+  fi
+}
