@@ -121,9 +121,7 @@ export PATH=$HOME/.anyenv/bin:$PATH
 eval "$(anyenv init - --no-rehash)"
 
 # nodenv
-eval "$(nodenv init -)
+eval "$(nodenv init -)"
 
 # Aliases
-# alias cp="gcp"
-
-echo Hello World
+alias cp="gcp"
