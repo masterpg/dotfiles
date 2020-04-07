@@ -90,6 +90,9 @@ initialize() {
     anyenv install rbenv
     anyenv install pyenv
     anyenv install nodenv
+
+    # https://qiita.com/itooww/items/f229e64b7a971fe64e22
+    touch $(nodenv root)/default-packages
   fi
 
   run_yarn
