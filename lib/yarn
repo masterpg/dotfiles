@@ -14,4 +14,3 @@ run_yarn() {
     echo "$(tput setaf 2)Install npm packages complete. ✔︎$(tput sgr0)"
   fi
 }
-

@@ -24,6 +24,7 @@ cask "font-myrica"
 cask "font-ricty-diminished"
 cask "google-chrome"
 cask "google-japanese-ime"
+cask "homebrew/cask-versions/google-chrome-canary"
 cask "iterm2"
 cask "jetbrains-toolbox"
 cask "keka"
@@ -37,5 +38,4 @@ cask "vlc"
 
 mas "Bear", id: 1091189122
 mas "Skitch", id: 425955336
-mas "TextWrangler", id: 404010395
 mas "Yoink", id: 457622435
