@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "lsof -i :0000",
+    "uid" : "B49AAEF5-2C7C-4093-BC2B-48ECFA349906",
+    "name" : "使用ポート検索",
+    "keyword" : "port"
+  }
+}
